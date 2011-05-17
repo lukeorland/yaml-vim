@@ -7,17 +7,21 @@
 
 YAML.VIM and YAML collection sorting scripts:
 
-INSTALLATION:
-- Put yaml.vim in vim's syntax folder (/usr/share/vim/syntax on my system)
-- Add the .yaml/.yml extensions to the filetype.vim file: |
-    " Yaml
-    au BufNewFile,BufRead *.yaml,*.yml    setf yaml
+INSTALLATION WITHOUT PATHOGEN:
+- Put syntax/yaml.vim in vim's syntax folder (/usr/share/vim/syntax on my system)
+- Put filetype/yaml.vim in vim's ftdetect folder
 - If you want add a new enty to the syntax menu:
     an 50.110.370 &Syntax.WXYZ.Yaml :cal SetSyn("yaml")<CR>
 - Put yamlsort.rb and yamlsort.vim into ~/.vim/scripts directory.
 
+INSTALLATION WITH PATHOGEN:
+- Just clone this as a submodule into your bundle/ directory.
+
 SORT USE:
-- Type vim command: |
+- TODO: |
+    add a global variable to toggle yamlsort on/off (adds the ability to
+    make add a custom key binding to toggle this feature)
+- (Until the above TODO is done) Type vim command: |
     :source ~/.vim/scripts/yamlsort.vim
 - Then: >
     <F4> is mapped to sort YAML collections in direct order, 
